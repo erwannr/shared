@@ -1,4 +1,3 @@
 # Shared
 
-## Files shared across repos for this account
-
+## Tex files shared across repos for this account

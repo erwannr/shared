@@ -3,8 +3,16 @@
 \usepackage{datetime2}
 \DTMsetstyle{french}
 
-\ProvideDocumentCommand{\Mme}{m}{M\textsuperscript{me}~#1}
-\ProvideDocumentCommand{\Mlle}{m}{M\textsuperscript{lle}~#1}
-\ProvideDocumentCommand{\CensoredElement}{}{[Élément~censuré]}
-\ProvideDocumentCommand{\MissingQuote}{}{[Citation~manquante]}
-\ProvideDocumentCommand{\WorkInProgress}{}{[Travail~en~cours]}
+\ProvideDocumentCommand{\Mme}{m}{M\texorpdfstring{\textsuperscript{me}}{me}~#1}
+\ProvideDocumentCommand{\Mlle}{m}{M\texorpdfstring{\textsuperscript{lle}}{lle}~#1}
+\ProvideDocumentCommand{\CensoredElementFR}{}{[Élément~censuré]}
+\ProvideDocumentCommand{\MissingQuoteFR}{}{[Citation~manquante]}
+\ProvideDocumentCommand{\WorkInProgressFR}{}{[Travail~en~cours]}
+\ProvideDocumentCommand{\DummyURLFR}{}{https://url-bidon.fr}
+\ProvideDocumentCommand{\OrdinalAbbrevFR}{o m}{%
+  #2\IfValueTF{#1}
+  {\texorpdfstring{\textsuperscript{#1}}{#1}} 
+  {\texorpdfstring{\textsuperscript{e}}{e}}
+}
+\ProvideDocumentCommand{\RefFigureFR}{m}{Figure~\ref{fig:#1}}
+\ProvideDocumentCommand{\RefSectionFR}{om}{\IfValueT{#1}{Partie~\ref{part:#1}~}Section~\ref{sec:#2}}

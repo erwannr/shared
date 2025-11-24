@@ -1,11 +1,33 @@
 # A meta file
 
-* shell
 * tex
+** license
+
+#+name: tex-license
+#+begin_src latex
+  % -----------------------------------------------------------------
+  % Copyright (C) 2025 by Erwann Rogard
+  % - Source repository: https://github.com/erwannr/humanit
+  % - Released under the LaTeX Project Public License v1.3c or later
+  % - See http://www.latex-project.org/lppl.txt
+  % -----------------------------------------------------------------
+#+end_src
+
+#+name: tex-copyright
+#+begin_src latex
+  % -----------------------------------------------------------------
+  % Copyright (C) 2025 by Erwann Rogard
+  % -----------------------------------------------------------------
+#+end_src
+
 ** bib 
 :PROPERTIES:
 :header-args: :tangle ./bib.tex
 :END:
+
+#+begin_src latex
+  <<tex-license>>
+#+end_src
 
 #+begin_src latex
   % \usepackage[bibencoding=auto, sorting=ynt, style=numeric, defernumbers=true]{biblatex}
@@ -18,6 +40,10 @@
 :END:
 
 #+begin_src latex
+  <<tex-license>>
+#+end_src
+
+#+begin_src latex
   \usepackage{changes} 
   \setcommentmarkup{}
   \sethighlightmarkup{}
@@ -27,6 +53,10 @@
 #+end_src
 
 ** counter
+
+#+begin_src latex
+  <<tex-license>>
+#+end_src
 
 ~Ctrl-C Ctrl-c~
 #+begin_src shell
@@ -42,6 +72,10 @@
 :END:
 
 #+begin_src latex
+  <<tex-license>>
+#+end_src
+
+#+begin_src latex
   \usepackage{enotez}
   \DeclareInstance{enotez-list}{default}{paragraph}{
     heading = \subsection*{Notes}
@@ -54,27 +88,23 @@
 :END:
 
 #+begin_src latex
+  <<tex-license>>
+#+end_src
+
+#+begin_src latex
   \usepackage{enumitem}
   \newlist{inlitemize}{itemize*}{1}
   \setlist[inlitemize]{label={}, itemjoin={{; }}, after*={.}}
-#+end_src
-
-** french
-:PROPERTIES:
-:header-args: :tangle ./french.tex
-:END:
-
-#+begin_src latex
-  \usepackage[english,french]{babel}
-
-  \usepackage{datetime2}
-  \DTMsetstyle{french}
 #+end_src
 
 ** quotestyle
 :PROPERTIES:
 :header-args: :tangle ./quotestyle.tex
 :END:
+
+#+begin_src latex
+  <<tex-license>>
+#+end_src
 
 #+begin_src latex
   \tcbset{
@@ -98,6 +128,10 @@
 :PROPERTIES:
 :header-args: :tangle ./xsim.tex
 :END:
+
+#+begin_src latex
+  <<tex-license>>
+#+end_src
 
 #+begin_src latex
   \usepackage{xsim}
@@ -151,164 +185,22 @@
   }{\par}
 #+end_src
 
-* bib
+** textutil
 :PROPERTIES:
-:header-args: :tangle ./french.bib
+:header-args: :tangle ./textutil.tex
 :END:
 
-#+begin_src bib
-@Article{losada2014,
-  author     = {Losada, José Manuel},
-  title      = {Littérature et {P}hilosophie, le règne de {D}escartes},
-  year       = {2014},
-  file       = {:/home/erwann/unique/jiL15fkL9H.pdf:PDF},
-  groups     = {human sciences},
-  readstatus = {read},
-  url        = {https://www.researchgate.net/publication/324758507_Litterature_et_philosophie_Le_regne_de_Descartes},
+#+begin_src latex
+  <<tex-license>>
+#+end_src
+
+#+begin_src latex
+  \ProvideDocumentCommand{\Elide}{sO{\IfBooleanT{#1}{\ldots}}m}{[#2]}
+#+end_src
+
+#+begin_src latex
+\ProvideDocumentCommand{\AttributeQuote}{m}{
+  \par\medskip\raggedleft--- #1
 }
 #+end_src
 
-#+begin_src latex
-  @Article{parmentier2014,
-    author     = {Parmentier, Marc},
-    journal    = {Atlante},
-    title      = {Voltaire et l'optimisme {L}eibinizien},
-    year       = {2014},
-    file       = {:/home/erwann/unique/FxItO3y2vL.pdf:PDF},
-    groups     = {human sciences},
-    readstatus = {skimmed},
-    url        = {https://atlante.univ-lille.fr/data/images/_articles/ATLANTE_1_5.pdf},
-  }
-#+end_src
-
-#+begin_src latex
-  @Book{darcos2005,
-    author    = {Voltaire and Darcos, Xavier},
-    publisher = {Hachette Education},
-    title     = {Candide, Voltaire},
-    isbn      = {978-2011691699},
-    date      = {2005-06-29},
-    groups    = {human sciences},
-    language  = {french},
-  }
-#+end_src
-
-#+begin_src latex
-  @Book{pernon2009,
-    author     = {de Montaigne, Michel and de Pernon, Guy},
-    title      = {Les Essais -- Livre I},
-    year       = {2009},
-    groups     = {human sciences},
-    language   = {french},
-    readstatus = {skimmed},
-    url        = {https://ia601507.us.archive.org/12/items/QuePhilosopherCEstApprendreAMourir/EssaisI.pdf}
-  }
-#+end_src
-
-#+begin_src latex
-  @Misc{standford-ontological,
-    title  = {Descartes' Ontological Argument},
-    groups = {human sciences},
-    date = {2001-06-18},
-    url    = {https://plato.stanford.edu/entries/descartes-ontological/}
-  }
-#+end_src
-
-#+begin_src latex
-  @Misc{bovary-audio-1,
-    title = {Madame Bovary 1/2 - Gustave Flaubert ( AudioBook FR )},
-    url = {https://www.youtube.com/watch?v=MqwCpRzVDZY},
-    date = {2016-09-15},
-    groups     = {human sciences},
-    language = {french}
-  }
-#+end_src
-
-#+begin_src latex
-  @Misc{bovary-audio-2,
-    title = {Madame Bovary 2/2 - Gustave Flaubert ( AudioBook FR )},
-    url = {https://www.youtube.com/watch?v=-Z2BEoRrGYw},
-    date = {2016-09-16},
-    groups     = {human sciences},
-    language = {french}
-  }
-#+end_src
-
-#+begin_src latex
-  @book{stendhal1927,
-    publisher = {Le Divan},
-    author = {Stendhal},
-    title = {Le rouge et le noir},
-    url = {https://beq.ebooksgratuits.com/vents/Stendhal-rouge.pdf},
-    year = {1917},
-    groups     = {human sciences},
-    language = {french}
-  }
-#+end_src
-
-#+begin_src latex
-  @book{flaubert1910,
-    year = {1910},
-    title = {Madame Bovary},
-    url = {https://fr.wikisource.org/wiki/Madame_Bovary/Texte_entier},
-    publisher = {Louis Conard},
-    groups     = {human sciences},
-    language = {french}
-  }
-#+end_src
-
-#+begin_src latex
-  @book{ternois1937,
-    author = {{Stendhal} and Ternois, René},
-    title = {Le rouge et le noir},
-    publisher = {Larousse, Paris},
-    groups = {human sciences},
-    year = {1937},
-    language = {french}
-  }
-#+end_src
-
-#+begin_src latex
-  @Book{girard1961,
-    author    = {Girard, René},
-    publisher = {Éditions Grasset \& Fasquelle},
-    title     = {Mensonge romantique et vérité romanesque},
-    year      = {1961},
-    keywords = {france, literature},
-    groups    = {human sciences},
-    url       = {https://search.worldcat.org/title/1246624044},
-  }
-#+end_src
-
-#+begin_src latex
-  @misc{droitsdauteur,
-    url = {https://web.archive.org/web/20210501000000*/https://www.culture.gouv.fr/Media/Thematiques/Propriete-litteraire-et-artistique/Conseil-superieur-de-la-propriete-litteraire-et-artistique/Files/Fiches-techniques-PLA/Fiche-internet-5-exceptions-au-droit-d-auteur2},
-    title = {Les exceptions au droit d'auteur -- Fiche No. 5},
-    date = {2021-05-01},
-    groups = {normative},
-    language = {french}}  
-#+end_src
-
-#+begin_src latex
-  @book{sellier1976,
-    title={Pens{\'e}es},
-    author={Pascal, Blaise and Sellier, Philippe},
-    lccn={76480679},
-    series={Les Classiques du Mercure},
-    url={https://books.google.com/books?id=OC8MogEACAAJ},
-    year={1976},
-    language = {french},
-    groups = {human sciences},
-    publisher={Mercure de France}
-  }
-#+end_src
-
-#+begin_src latex
-  @inbook{pascal-fragment-469,
-    author = {Pascal, Blaise},
-    title = {Le pharisien et le publicain},
-    crossref = {sellier1976},
-    url = {https://www.penseesdepascal.fr/XXIII/XXIII16-moderne.php},
-    urldate = {2025-11-18}
-  }
-#+end_src
