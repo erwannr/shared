@@ -26,10 +26,6 @@
 :END:
 
 #+begin_src latex
-  <<tex-license>>
-#+end_src
-
-#+begin_src latex
   % \usepackage[bibencoding=auto, sorting=ynt, style=numeric, defernumbers=true]{biblatex}
   \usepackage[bibencoding=auto, sorting=ynt, style=numeric]{biblatex}
 #+end_src
@@ -40,10 +36,6 @@
 :END:
 
 #+begin_src latex
-  <<tex-license>>
-#+end_src
-
-#+begin_src latex
   \usepackage{changes} 
   \setcommentmarkup{}
   \sethighlightmarkup{}
@@ -51,7 +43,6 @@
   \setauthormarkup{\textsuperscript{#1}}
   \definechangesauthor[name={Erwann}, color=black]{R1}
 #+end_src
-
 ** counter
 
 ~Ctrl-C Ctrl-c~
@@ -68,10 +59,6 @@
 :END:
 
 #+begin_src latex
-  <<tex-license>>
-#+end_src
-
-#+begin_src latex
   \usepackage{enotez}
   \DeclareInstance{enotez-list}{default}{paragraph}{
     heading = \subsection*{Notes}
@@ -84,10 +71,6 @@
 :END:
 
 #+begin_src latex
-  <<tex-license>>
-#+end_src
-
-#+begin_src latex
   \usepackage{enumitem}
   \newlist{inlitemize}{itemize*}{1}
   \setlist[inlitemize]{label={}, itemjoin={{; }}, after*={.}}
@@ -97,10 +80,6 @@
 :PROPERTIES:
 :header-args: :tangle ./quotestyle.tex
 :END:
-
-#+begin_src latex
-  <<tex-license>>
-#+end_src
 
 #+begin_src latex
   \tcbset{
@@ -119,15 +98,10 @@
     }
   }
 #+end_src
-
 ** xsim
 :PROPERTIES:
 :header-args: :tangle ./xsim.tex
 :END:
-
-#+begin_src latex
-  <<tex-license>>
-#+end_src
 
 #+begin_src latex
   \usepackage{xsim}
@@ -180,15 +154,10 @@
     }%
   }{\par}
 #+end_src
-
 ** textutil
 :PROPERTIES:
 :header-args: :tangle ./textutil.tex
 :END:
-
-#+begin_src latex
-  <<tex-license>>
-#+end_src
 
 #+begin_src latex
   \ProvideDocumentCommand{\Elide}{sO{\IfBooleanT{#1}{\ldots}}m}{[#2]}
