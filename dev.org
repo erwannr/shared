@@ -54,10 +54,6 @@
 
 ** counter
 
-#+begin_src latex
-  <<tex-license>>
-#+end_src
-
 ~Ctrl-C Ctrl-c~
 #+begin_src shell
   curl -L -o ./counter.tex \
