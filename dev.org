@@ -26,8 +26,8 @@
 :END:
 
 #+begin_src latex
-  % \usepackage[bibencoding=auto, sorting=ynt, style=numeric, defernumbers=true]{biblatex}
-  \usepackage[bibencoding=auto, sorting=ynt, style=numeric]{biblatex}
+  %\usepackage{biblatex}
+  \ExecuteBibliographyOptions{bibencoding=auto, sorting=ynt, style=numeric}
 #+end_src
 
 ** changes
@@ -36,13 +36,14 @@
 :END:
 
 #+begin_src latex
-  \usepackage{changes} 
+  %\usepackage{changes} 
   \setcommentmarkup{}
   \sethighlightmarkup{}
   \setaddedmarkup{#1}
   \setauthormarkup{\textsuperscript{#1}}
   \definechangesauthor[name={Erwann}, color=black]{R1}
 #+end_src
+
 ** counter
 
 ~Ctrl-C Ctrl-c~
@@ -59,19 +60,19 @@
 :END:
 
 #+begin_src latex
-  \usepackage{enotez}
+  %\usepackage{enotez}
   \DeclareInstance{enotez-list}{default}{paragraph}{
     heading = \subsection*{Notes}
   }  
 #+end_src
 
-** enumitem
+** inlitemize
 :PROPERTIES:
-:header-args: :tangle ./enumitem.tex
+:header-args: :tangle ./inlitemize.tex
 :END:
 
 #+begin_src latex
-  \usepackage{enumitem}
+  %\usepackage{enumitem}
   \newlist{inlitemize}{itemize*}{1}
   \setlist[inlitemize]{label={}, itemjoin={{; }}, after*={.}}
 #+end_src
@@ -104,7 +105,7 @@
 :END:
 
 #+begin_src latex
-  \usepackage{xsim}
+  %\usepackage{xsim}
 
   \ProvideDocumentCommand{\ExerciseName}{}{Question}
   \ProvideDocumentCommand{\SolutionName}{}{Answer}
@@ -171,4 +172,34 @@
 
 #+begin_src latex
   \ProvideDocumentCommand{\ISOdate}{O{\today}}{#1}
+#+end_src
+
+
+#+begin_src latex
+  \ExplSyntaxOn
+  % Declare title, author, date token lists
+  \tl_new:N \g__erw_title_tl
+  \tl_new:N \g__erw_author_tl
+  \tl_new:N \g__erw_date_tl
+
+  % Commands to set them (like \title, \author, \date)
+  \ProvideDocumentCommand{\Title}{m}{\tl_gset:Nn \g__erw_title_tl {#1}}
+  \ProvideDocumentCommand{\Author}{m}{\tl_gset:Nn \g__erw_author_tl {#1}}
+  \ProvideDocumentCommand{\Date}{m}{\tl_gset:Nn \g__erw_date_tl {#1}}
+
+  % Redefine \maketitle in LaTeX3 style
+  \ProvideDocumentCommand\MakeTitle{}
+  {
+    \begin{titlepage}
+      \centering
+      \vspace*{\fill}
+      {\Huge \bfseries \tl_use:N \g__erw_title_tl}\\
+      \vspace*{\fill}
+      {\tl_use:N \g__erw_author_tl}\\
+      \vspace*{\fill}
+      {\Large \bfseries \tl_use:N \g__erw_date_tl}
+      \vspace{\fill}
+    \end{titlepage}
+  }
+  \ExplSyntaxOff
 #+end_src
